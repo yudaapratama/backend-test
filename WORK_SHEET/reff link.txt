@@ -1,0 +1,8 @@
+https://sequelize.org/
+https://pnpm.io/id/cli/add
+https://expressjs.com/
+https://stackoverflow.com/questions/22643263/how-to-get-a-distinct-count-with-sequelize
+https://stackoverflow.com/questions/63856212/how-to-display-sequelize-validation-error-messages-in-express-api
+https://www.postgresql.org/docs/current/functions-datetime.html
+https://stackoverflow.com/questions/2847849/sql-aggregate-functions-string-join-concatenation
+https://stackoverflow.com/questions/2214525/what-is-the-postgresql-equivalent-for-isnull

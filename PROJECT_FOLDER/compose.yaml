@@ -1,0 +1,33 @@
+
+services:
+  app:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+      DB_HOST: postgres
+      DB_NAME: data_kepegawaian
+      DB_USER: postgres
+      DB_PASSWORD: password
+    ports:
+      - 8020:8020
+    depends_on:
+      postgres: 
+        condition: service_healthy 
+  postgres:
+    image: postgres:latest
+    env_file: .env
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    container_name: postgres-container
+    volumes:
+      - postgres-data:/var/lib/postgres
+    environment:
+      POSTGRES_USER: $DB_USER
+      POSTGRES_DB: $DB_NAME
+      POSTGRES_PASSWORD: $DB_PASSWORD
+volumes:
+  postgres-data:
